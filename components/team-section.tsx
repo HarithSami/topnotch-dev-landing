@@ -2,7 +2,7 @@
 
 import { motion } from "@/components/motion-wrapper";
 import Image from "next/image";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 export function TeamSection() {
     const team = [
@@ -10,19 +10,25 @@ export function TeamSection() {
             name: "Harith Ibrahim",
             role: "ML & Automation Lead",
             bio: "MEng Robotics, University of Leeds | Ex-Nokia. Architecting our AI automation engine with enterprise-grade expertise.",
-            image: "/images/harith_ibrahim.png"
+            image: "/images/harith_ibrahim.png",
+            linkedin: "https://www.linkedin.com/in/harith-ibrahim/",
+            email: "harith-ibrahim@topnotch-dev.com"
         },
         {
             name: "Harith Al-Safi",
             role: "Full-Stack Development",
             bio: "BEng Computer Engineering, University of Leeds | Ex-BT. Building the scalable, robust infrastructure powering CV Studio.",
-            image: "/images/harith_alsafi.png"
+            image: "/images/harith_alsafi.png",
+            linkedin: "https://www.linkedin.com/in/harith-al-safi/",
+            email: "harith-al-safi@topnotch-dev.com"
         },
         {
             name: "Abdallah AlSafadi",
             role: "Finance & Strategy",
             bio: "MSc Economics & Policy, UCL | Ex-PWC. Driving financial strategy, compliance, and institutional partnerships.",
-            image: "/images/Abdallah_AlSafadi.png"
+            image: "/images/Abdallah_AlSafadi.png",
+            linkedin: "https://www.linkedin.com/in/abdallah-alsafadi-2589291b9/",
+            email: "abdallah-alsafadi@topnotch-dev.com"
         }
     ];
 
@@ -69,11 +75,21 @@ export function TeamSection() {
                             </p>
 
                             <div className="flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-colors">
+                                <a 
+                                    href={member.linkedin} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="p-2 rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-colors"
+                                    title="LinkedIn Profile"
+                                >
                                     <Linkedin className="h-5 w-5" />
                                 </a>
-                                <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-colors">
-                                    <Twitter className="h-5 w-5" />
+                                <a 
+                                    href={`mailto:${member.email}`}
+                                    className="p-2 rounded-full bg-muted hover:bg-primary/20 hover:text-primary transition-colors"
+                                    title="Send Email"
+                                >
+                                    <Mail className="h-5 w-5" />
                                 </a>
                             </div>
                         </motion.div>

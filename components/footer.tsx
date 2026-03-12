@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Linkedin, Twitter, Github } from "lucide-react";
+import { FileText, Linkedin, Twitter } from "lucide-react";
+import { ContactModal } from "@/components/contact-modal";
 
 export function Footer() {
   return (
@@ -28,19 +29,19 @@ export function Footer() {
             <div>
               <h3 className="font-medium mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><Link href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</Link></li>
-                <li><Link href="#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
-                <li><Link href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
+                <li><Link href="/#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</Link></li>
+                <li><Link href="/#team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Team</Link></li>
+                <li><ContactModal><button className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</button></ContactModal></li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-medium mb-4">Services</h3>
               <ul className="space-y-2">
-                <li><Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Automation</Link></li>
-                <li><Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Data Science</Link></li>
-                <li><Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AI & ML</Link></li>
-                <li><Link href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Full Stack Dev</Link></li>
+                <li><Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Automation</Link></li>
+                <li><Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Data Science</Link></li>
+                <li><Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AI & ML</Link></li>
+                <li><Link href="/#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Full Stack Dev</Link></li>
               </ul>
             </div>
 
@@ -59,11 +60,8 @@ export function Footer() {
             © {new Date().getFullYear()} TopNotch Dev Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link href="https://www.linkedin.com/company/topnotch-dev" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
               <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Github className="h-5 w-5" />
             </Link>
           </div>
         </div>

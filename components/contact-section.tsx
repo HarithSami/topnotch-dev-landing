@@ -4,6 +4,7 @@ import { motion } from "@/components/motion-wrapper";
 import { Mail, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ContactModal } from "@/components/contact-modal";
 
 export function ContactSection() {
     return (
@@ -25,18 +26,13 @@ export function ContactSection() {
                         Whether you need a custom AI solution, a robust ATS platform, or advanced data analytics, TopNotch Dev is your partner in innovation.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
-                            <Link href="mailto:contact@topnotch.dev">
+                    <div className="flex justify-center">
+                        <ContactModal>
+                            <Button size="lg" className="h-14 px-8 text-lg">
                                 <Mail className="mr-3 h-5 w-5" />
                                 Contact Our Team
-                            </Link>
-                        </Button>
-                        <Button size="lg" variant="outline" className="h-14 px-8 text-lg bg-background" asChild>
-                            <Link href="https://calendly.com/topnotchdev" target="_blank">
-                                Schedule a Consultation
-                            </Link>
-                        </Button>
+                            </Button>
+                        </ContactModal>
                     </div>
                 </motion.div>
             </div>

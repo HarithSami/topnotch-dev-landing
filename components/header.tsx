@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import { ContactModal } from "@/components/contact-modal";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,10 +60,10 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
-          <Link href="#services" className="text-sm font-medium hover:text-primary transition-colors">Services</Link>
-          <Link href="#projects" className="text-sm font-medium hover:text-primary transition-colors">Projects</Link>
-          <Link href="#team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
+          <Link href="/#about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+          <Link href="/#services" className="text-sm font-medium hover:text-primary transition-colors">Services</Link>
+          <Link href="/#projects" className="text-sm font-medium hover:text-primary transition-colors">Projects</Link>
+          <Link href="/#team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
@@ -78,9 +79,9 @@ export function Header() {
               <MoonStar className="h-5 w-5" />
             )}
           </Button>
-          <Button asChild>
-            <Link href="#contact">Contact Us</Link>
-          </Button>
+          <ContactModal>
+            <Button>Contact Us</Button>
+          </ContactModal>
         </div>
 
         {/* Mobile Navigation */}
@@ -117,37 +118,37 @@ export function Header() {
         <div className="md:hidden bg-background/95 backdrop-blur-md shadow-lg py-4 px-4 border-t">
           <nav className="flex flex-col gap-4">
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm font-medium py-2 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               className="text-sm font-medium py-2 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </Link>
             <Link
-              href="#projects"
+              href="/#projects"
               className="text-sm font-medium py-2 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
             </Link>
             <Link
-              href="#team"
+              href="/#team"
               className="text-sm font-medium py-2 hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Team
             </Link>
             <div className="flex flex-col gap-2 pt-4 border-t">
-              <Button className="w-full" asChild>
-                <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact Us</Link>
-              </Button>
+              <ContactModal>
+                <Button className="w-full">Contact Us</Button>
+              </ContactModal>
             </div>
           </nav>
         </div>
