@@ -1,6 +1,7 @@
-
 import { NextRequest, NextResponse } from "next/server";
 import { sendContactEmail } from "@/lib/brevo";
+
+export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
     try {
